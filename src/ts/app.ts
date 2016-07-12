@@ -1,11 +1,17 @@
 // Import Sass -- Separated at Compile Time
 import '../sass/app.scss';
-// Partial Imports
-import { Greeter } from './partial';
 
+// NPM Dependency Imports
+import * as Vue from 'vue';
+// Partial Imports
+import Tasks from './partial';
 ( () => {
 
-	let greeter = new Greeter("world");
-	console.log(greeter);
-	console.log(greeter.greeting);
+	const VueContainer = new Vue ({
+		el: 'html',
+		components: {
+			Tasks
+		}
+	});
+
 })();
