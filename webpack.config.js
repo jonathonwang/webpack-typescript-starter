@@ -1,11 +1,13 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {  
-  entry: './src/ts/app.tsx',
-  output: {
+	entry: './src/ts/app.tsx',
+	output: {
 		path: 'dist/',
-    filename: 'js/app.js'
+		filename: 'js/app.js'
   },
   // Turn on sourcemaps
   devtool: 'source-map',
@@ -14,17 +16,20 @@ module.exports = {
   },
   // Add minification
   plugins: [
-		new WebpackNotifierPlugin({title: 'Webpack', contentImage: 'http://reapp.io/images/webpack.svg'}),
+		new WebpackNotifierPlugin({title: 'Webpack', contentImage: 'webpack.png'}),
     new webpack.optimize.UglifyJsPlugin(),
 		new ExtractTextPlugin("css/app.css", {
 			allChunks: true
 		})
   ],
-  module: {
-    loaders: [
-      { test: /\.tsx$/, loader: 'ts' },
+	module: {
+		loaders: [
+			{ test: /\.tsx$/, loader: 'ts' },
 			{ test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/, loader: 'file' },
-			{ test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
-    ]
-  }
+			{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader']) }
+		]
+  },
+	postcss() {
+		return [autoprefixer, precss];
+	}
 }
