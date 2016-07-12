@@ -1,2 +1,2 @@
-module.exports.entry	webpack.config.js	/^  entry: '.\/src\/ts\/app.ts',$/;"	p
-module.exports.output	webpack.config.js	/^  output: {$/;"	p
+module.exports.entry	webpack.config.js	/^	entry: '.\/src\/ts\/app.ts',$/;"	p
+module.exports.output	webpack.config.js	/^	output: {$/;"	p
