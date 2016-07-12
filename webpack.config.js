@@ -9,12 +9,12 @@ module.exports = {
 		path: 'dist/',
 		filename: 'js/app.js'
 	},
-  // Turn on sourcemaps
+	// Turn on sourcemaps
 	devtool: 'source-map',
 	resolve: {
 		extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
 	},
-  // Add minification
+	// Add minification
 	plugins: [
 		new WebpackNotifierPlugin({title: 'Webpack', contentImage: 'http://reapp.io/images/webpack.svg'}),
 		new webpack.optimize.UglifyJsPlugin(),
