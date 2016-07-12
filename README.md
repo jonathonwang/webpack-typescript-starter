@@ -16,3 +16,7 @@ This repo comes pre-configured with sass-loader, and typescript loader
 
 Check `webpack.config.js` to change setup or add addional plugins
 
+####Frameworks
+I have setup webpack to come preconfigured for various javascript frameworks.
+
+Explore the branches to see the base setup for these frameworks.
