@@ -5,6 +5,9 @@
 #####Install
 `npm install`
 
+If you do not have Typescript installed: 
+`npm install typescript --g`
+
 ======
 
 ####Webpack
