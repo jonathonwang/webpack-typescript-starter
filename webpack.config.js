@@ -1,6 +1,8 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const precss = require('precss');
+const autoprefixer = require('autoprefixer');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {  
   entry: './src/ts/app.ts',
   output: {
@@ -24,8 +26,11 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts' },
 			{ test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/, loader: 'file' },
-			{ test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
+			{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader']) }
     ]
+  },
+	postcss() {
+    return [autoprefixer, precss];
   },
 
 }
