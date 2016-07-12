@@ -16,7 +16,7 @@ module.exports = {
 	},
 	// Add minification
 	plugins: [
-		new WebpackNotifierPlugin({title: 'Webpack', contentImage: 'http://reapp.io/images/webpack.svg'}),
+		new WebpackNotifierPlugin({title: 'Webpack', contentImage: 'webpack.png'}),
 		new webpack.optimize.UglifyJsPlugin(),
 		new ExtractTextPlugin("css/app.css", {
 			allChunks: true
