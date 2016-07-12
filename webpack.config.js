@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const WebpackNotifierPlugin = require('webpack-notifier');
 module.exports = {  
-  entry: './src/ts/app.ts',
+  entry: './src/ts/app.tsx',
   output: {
 		path: 'dist/',
     filename: 'js/app.js'
@@ -10,7 +10,7 @@ module.exports = {
   // Turn on sourcemaps
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   // Add minification
   plugins: [
@@ -22,10 +22,9 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'ts' },
+      { test: /\.tsx$/, loader: 'ts' },
 			{ test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/, loader: 'file' },
 			{ test: /\.scss$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
     ]
-  },
-
+  }
 }

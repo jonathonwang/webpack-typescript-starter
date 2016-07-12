@@ -1,14 +1,14 @@
-# Webpack-Typescript-Starter
-### Get started Using Webpack with Typescript
+# Webpack-Typescript-Starter + React
+### Get started Using Webpack with Typescript & React
 ======
 
 #####Install
 `npm install`
-
+`typings install`
 ======
 
 ####Webpack
-This repo comes pre-configured with sass-loader, and typescript loader
+This repo comes pre-configured with sass-loader, and typescript loader, using `.tsx` files
 
 `webpack` Compile Typescript and Sass assets
 
