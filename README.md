@@ -1,11 +1,14 @@
-# Webpack-Typescript-Starter
-### Get started Using Webpack with Typescript
+# Webpack-Typescript-Starter + Angular 2
+### Get started Using Webpack with Typescript & Angular 2
 ======
 
 #####Install
 `npm install`
 
+`typings install`
+
 If you do not have Typescript installed: 
+
 `npm install typescript --g`
 
 ======
