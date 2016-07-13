@@ -20,6 +20,9 @@ module.exports = {
 		new webpack.optimize.UglifyJsPlugin(),
 		new ExtractTextPlugin("css/app.css", {
 			allChunks: true
+		}),
+		new ExtractTextPlugin("css/[name].[extension]", {
+			allChunks: true
 		})
 	],
 	module: {
